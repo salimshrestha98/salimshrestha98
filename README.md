@@ -6,4 +6,5 @@
 - > [LinkedIn](https://www.linkedin.com/in/salim-shrestha/)
 - > [Twitter](https://twitter.com/salimshrestha11)
 - > [Website](https://salim.com.np)
+- > [Kaggle](https://www.kaggle.com/salimkshrestha)
 
