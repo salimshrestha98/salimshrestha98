@@ -1,5 +1,6 @@
-- 👋 Hi, I’m **Salim Shrestha**. I am a Machine Learning and Data Science trainee.
+- 👋 Hi, I’m **Salim Shrestha**.
 - 👀 I’m interested in Problem Solving, Product Design, Machine Learning and Data Analysis.
+-     I have been designing and developing fully functional websites and web apps for years now.
 - 🌱 I’m currently learning Machine Learning and Data Analysis.
 - 💞️ I’m looking to collaborate on related projects.
 - 📫 You can reach me through various channels.
