@@ -6,7 +6,7 @@ I have been designing and developing fully functional websites and web apps for 
 </p>
 <br/>
 
-[![Salim's Github Stats](https://github-readme-stats.vercel.app/api?username=salimshrestha98&count_private=true&show_icons=true&theme=calm&hide_title=true&include_all_commits=true)](https://github.com/anuraghazra/github-readme-stats)
+[![Salim's Github Stats](https://github-readme-stats.vercel.app/api?username=salimshrestha98&count_private=true&show_icons=true&theme=calm&hide_title=true&include_all_commits=true)](https://github.comsalimshrestha98)
 
 <br/>
 
