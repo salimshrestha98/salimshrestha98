@@ -1,18 +1,19 @@
 <h1><blockquote>"Programming isn't about what you know; it's about what you can figure out.” - Chris Pine</blockquote></h1>
 
-<h1> Hi There, </h1>
-<p>
-  I am <a href="https://salim.com.np">Salim Shrestha</a>.<br/>
-I’m interested in Problem Solving, Product Design, Machine Learning and Data Analysis.<br/>
-I have been designing and developing fully functional websites and web apps for years now.<br/>
-</p>
+<h1>Salim Shrestha&nbsp;<a href="https://salim.com.np">:link:</a><br/></h1>
+<h4>
+<blockquote>
+I'm a PHP Developer at <a href="https://themegrill.com" target="_blank">ThemeGrill</a>. I have been working with WordPress Themes and Plugins.<br/><br/>
+I love Problem Solving, Product Designing, Building Usable Machine Learning models and Performing Data Analysis.<br/><br/>
+</blockquote>
+</h4>
 <br/>
 
 [![Salim's Github Stats](https://github-readme-stats.vercel.app/api?username=salimshrestha98&count_private=true&show_icons=true&theme=calm&hide_title=true&include_all_commits=true)](https://github.com/salimshrestha98)
 
 <br/>
 
-🔗 &nbsp;**Connect with me**
+🔗 &nbsp;**Social Profiles**
 <p align="left">
 <a href="https://www.linkedin.com/in/salim-shrestha" target="_blank" title="LinkedIn"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="Salim Shrestha LinkedIn" height="30" width="40" /></a>
 <a href="https://twitter.com/salimshrestha11" target="_blank" title="Twitter"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="Salim Shrestha Twitter" height="30" width="40" /></a>
@@ -30,6 +31,6 @@ I have been designing and developing fully functional websites and web apps for 
   <br/>
   <br/>
 
-:stuck_out_tongue:&nbsp;**Fun Fact:**
+:stuck_out_tongue:&nbsp;&nbsp;**Fun Fact:**
 <blockquote>Copy-and-Paste was programmed by programmers for programmers actually.</blockquote>
 
