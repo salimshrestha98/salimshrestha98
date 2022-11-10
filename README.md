@@ -31,6 +31,3 @@ I love Problem Solving, Product Designing, Building Usable Machine Learning mode
   <br/>
   <br/>
 
-:stuck_out_tongue:&nbsp;&nbsp;**Fun Fact:**
-<blockquote>Copy-and-Paste was programmed by programmers for programmers actually.</blockquote>
-
