@@ -1,17 +1,23 @@
-<h1><blockquote>"Programming isn't about what you know; it's about what you can figure out.” - Chris Pine</blockquote></h1>
+👋 Hello, I'm Salim Shrestha!
 
-<h1>Salim Shrestha&nbsp;<a href="https://salim.com.np">:link:</a><br/></h1>
-<h4>
-<blockquote>
-I'm a PHP Developer at <a href="https://themegrill.com" target="_blank">ThemeGrill</a>. I have been working with WordPress Themes and Plugins.<br/><br/>
-I love Problem Solving, Product Designing, Building Usable Machine Learning models and Performing Data Analysis.<br/><br/>
-</blockquote>
-</h4>
-<br/>
+🧑‍💻 I am a WordPress plugin developer with a passion for software engineering, machine learning, and data science. I love building innovative solutions and exploring the intersection of technology and creativity.
 
-[![Salim's Github Stats](https://github-readme-stats.vercel.app/api?username=salimshrestha98&count_private=true&show_icons=true&theme=calm&hide_title=true&include_all_commits=true)](https://github.com/salimshrestha98)
+🌱 Currently, I am focusing on honing my skills in software engineering principles and best practices. I am constantly learning and exploring new technologies to expand my knowledge and stay up-to-date with the latest industry trends.
 
-<br/>
+🚀 Some of the key areas I specialize in:
+
+- WordPress plugin development
+- Software architecture and design patterns
+- Machine learning algorithms and techniques
+- Data analysis and visualization
+
+
+🔭 On GitHub, you'll find a variety of projects showcasing my work, including WordPress plugins, machine learning experiments, and data analysis projects. I believe in the power of open-source collaboration and enjoy contributing to the community.
+
+📚 I am also passionate about sharing knowledge and helping others. You can find articles and tutorials on my website, where I write about software development, machine learning, and data science topics.
+
+💬 Let's connect! Feel free to reach out to me for collaboration, project ideas, or just to have a chat about technology. I'm always excited to meet like-minded individuals and work on interesting projects together.
+<br />
 
 🔗 &nbsp;**Social Profiles**
 
@@ -25,7 +31,6 @@ I love Problem Solving, Product Designing, Building Usable Machine Learning mode
 <a href="https://gitlab.com/salimshrestha" target="_blank" title="Gitlab"><img align="center" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/gitlab/gitlab-original.svg" alt="Salim Shrestha Gitlab" height="30" width="40" /></a>
 <a href="https://profiles.wordpress.org/salimshrestha/" target="_blank" title="WordPress.org"><img align="center" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/wordpress/wordpress-plain.svg" alt="Salim Shrestha WordPress" height="30" width="40" /></a>
 </p>
-<br />
 <br />
 
 <b>🛠️&nbsp;&nbsp;Languages&nbsp;and&nbsp;Tools&nbsp;I&nbsp;Use</b>
@@ -44,7 +49,7 @@ I love Problem Solving, Product Designing, Building Usable Machine Learning mode
 <a href="https://www.python.org" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="40" height="40"/> </a>
 <a href="https://www.typescriptlang.org/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="Typescript" width="40" height="40"/> </a>
 <a href="https://code.visualstudio.com/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" alt="Visual Studio Code" width="40" height="40"/> </a>
-
 </p>
-  <br/>
-  <br/>
+<br/>
+
+✨ Thank you for visiting my GitHub profile. Stay curious and keep coding!
