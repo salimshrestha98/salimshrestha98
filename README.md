@@ -4,6 +4,7 @@
 <br/>
 
 I am a **WordPress plugin developer** with a passion for software engineering, machine learning, and data science. I specialize in **WordPress plugin development**, **custom block creation (Gutenberg)**, and **website performance optimization**.
+
 <br />
 
 ---
@@ -19,6 +20,7 @@ I am a **WordPress plugin developer** with a passion for software engineering, m
 - 💼 Full Remote Freelance WordPress Development  
 
 I'm currently accepting **remote jobs**, **long-term freelance contracts**, and **one-off WordPress gigs**.
+
 <br />
 
 ---
@@ -88,8 +90,6 @@ I’m actively looking for:
 > 💬 If you're looking for a reliable, fast-learning developer who brings structure, commitment, and integrity to the table — let’s talk.
 >
 <br />
-
----
 <br />
 
 ### ✨ Thanks for checking out my GitHub!  
