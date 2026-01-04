@@ -105,20 +105,15 @@ const salim = {
 
 ---
 
-### GitHub Stats
+### By the Numbers
 
-<div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=salimshrestha98&show_icons=true&theme=default&hide_border=true&bg_color=ffffff&title_color=1e40af&icon_color=1e40af&text_color=334155" alt="GitHub Stats" height="165">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=salimshrestha98&layout=compact&hide_border=true&bg_color=ffffff&title_color=1e40af&text_color=334155" alt="Top Languages" height="165">
-
-</div>
-
-<div align="center">
-
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=salimshrestha98&theme=default&hide_border=true&background=ffffff&ring=1e40af&fire=1e40af&currStreakLabel=1e40af)
-
-</div>
+```
+10,000+     Active plugin installs (AffiliateX)
+480+        Latest commits on production codebases
+25+         Gutenberg blocks maintained
+20+         Elementor widgets created
+100K+       Combined installs (ThemeGrill plugins)
+```
 
 ---
 
