@@ -1,96 +1,152 @@
-## 👋 Hi, I'm Salim Shrestha
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.herokuapp.com?font=Inter&weight=600&size=28&duration=3000&pause=1000&color=3B82F6&background=00000000&center=true&vCenter=true&width=600&lines=Senior+WordPress+Plugin+Developer;Building+tools+for+10%2C000%2B+websites;WordCamp+Bharatpur+2025+Speaker">
+  <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.herokuapp.com?font=Inter&weight=600&size=28&duration=3000&pause=1000&color=1E40AF&background=FFFFFF00&center=true&vCenter=true&width=600&lines=Senior+WordPress+Plugin+Developer;Building+tools+for+10%2C000%2B+websites;WordCamp+Bharatpur+2025+Speaker">
+  <img alt="Typing SVG" src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=600&size=28&duration=3000&pause=1000&color=1E40AF&background=FFFFFF00&center=true&vCenter=true&width=600&lines=Senior+WordPress+Plugin+Developer;Building+tools+for+10%2C000%2B+websites;WordCamp+Bharatpur+2025+Speaker">
+</picture>
 
-#### WordPress Plugin Developer | WordPress Plugin and Theme Specialist | Freelancer
-<br/>
+<div align="center">
 
-I am a **WordPress plugin developer** with a passion for software engineering, machine learning, and data science. I specialize in **WordPress plugin development**, **custom block creation (Gutenberg)**, and **website performance optimization**.
+[![Website](https://img.shields.io/badge/salim.com.np-1e40af?style=for-the-badge&logo=google-chrome&logoColor=white)](https://salim.com.np)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/salim-shrestha)
+[![WordPress](https://img.shields.io/badge/WordPress.org-21759B?style=for-the-badge&logo=wordpress&logoColor=white)](https://profiles.wordpress.org/salimshrestha/)
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://x.com/_salim_shrestha)
 
-<br />
-
----
-<br />
-
-### 🚀 What I Offer
-
-- 🔧 Custom WordPress Plugin Development  
-- 🧩 Gutenberg Blocks & Advanced Custom Fields Integration  
-- 🔐 WordPress Security, Optimization & Hardening  
-- 🌍 API Integration, Automations, and Backend Logic  
-- 🛠️ Bug Fixes, Debugging, and Code Refactoring  
-- 💼 Full Remote Freelance WordPress Development  
-
-I'm currently accepting **remote jobs**, **long-term freelance contracts**, and **one-off WordPress gigs**.
-
-<br />
+</div>
 
 ---
 
-<br />
+### About Me
 
- ### 📚 My Current Focus
+I'm a WordPress Plugin Developer from Nepal, currently building core features for **AffiliateX** (10K+ active installs) at WPCenter. Previously at ThemeGrill, where I contributed to plugins with 100K+ combined installations.
 
-- Mastering advanced **WordPress development practices**  
-- Learning **software engineering patterns** for scalable development  
-- Integrating Machine Learning and AI capabilities in WordPress websites.
-- Sharing knowledge through content and meaningful client projects  
-<br />
+I specialize in building **Gutenberg blocks with React**, **Elementor widget integrations**, and **reliable background processing systems**. My recent work includes migrating sync systems to Action Scheduler, implementing geolocation-based content, and securing REST API endpoints.
+
+```javascript
+const salim = {
+    location: "Kathmandu, Nepal",
+    currentRole: "WordPress Plugin Developer @ WPCenter",
+    focus: ["Gutenberg Blocks", "Elementor Widgets", "Plugin Architecture"],
+    funFact: "I taught CS to school students in rural Nepal before returning to code"
+};
+```
+
+---
+
+### Tech Stack
+
+<div align="center">
+
+**Languages & Core**
+
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+
+**WordPress Ecosystem**
+
+![WordPress](https://img.shields.io/badge/WordPress-21759B?style=for-the-badge&logo=wordpress&logoColor=white)
+![Gutenberg](https://img.shields.io/badge/Gutenberg-000000?style=for-the-badge&logo=gutenberg&logoColor=white)
+![Elementor](https://img.shields.io/badge/Elementor-92003B?style=for-the-badge&logo=elementor&logoColor=white)
+![WooCommerce](https://img.shields.io/badge/WooCommerce-96588A?style=for-the-badge&logo=woocommerce&logoColor=white)
+
+**Frontend & Tools**
+
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![SASS](https://img.shields.io/badge/SASS-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![Webpack](https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=webpack&logoColor=black)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+
+</div>
 
 ---
 
+### What I'm Working On
 
-<br />
+<table>
+<tr>
+<td width="50%">
 
-### 🔗 Find Me Online
+**AffiliateX @ WPCenter**
+> Amazon affiliate plugin with 10K+ installs
 
-<p align="left">
-<a href="https://www.linkedin.com/in/salim-shrestha" target="_blank" title="LinkedIn"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="Salim Shrestha LinkedIn" height="30" width="40" /></a>
-<a href="https://twitter.com/salimshrestha11" target="_blank" title="Twitter"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="Salim Shrestha Twitter" height="30" width="40" /></a>
-<a href="https://www.hackerrank.com/salimshrestha?hr_r=1" target="_blank" title="Hackerrank"><img align="center" src="https://github.com/rahuldkjain/github-profile-readme-generator/raw/master/src/images/icons/Social/hackerrank.svg" alt="Salim Shrestha Hackerrank" height="30" width="40" /></a>
-<a href="https://stackoverflow.com/users/7932334/salim-shrestha" target="_blank" title="StackOverflow"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/stack-overflow.svg" alt="Salim Shrestha StackOverflow" height="30" width="40" /></a>
-<a href="https://www.kaggle.com/salimkshrestha" target="_blank" title="Kaggle"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/kaggle.svg" alt="Salim Shrestha Kaggle" height="30" width="40" /></a>
-<a href="https://dev.to/salimshrestha" target="_blank" title="Dev.to"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/dev-dot-to.svg" alt="Salim Shrestha Dev.to" height="30" width="40" /></a>
-<a href="https://gitlab.com/salimshrestha" target="_blank" title="Gitlab"><img align="center" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/gitlab/gitlab-original.svg" alt="Salim Shrestha Gitlab" height="30" width="40" /></a>
-<a href="https://profiles.wordpress.org/salimshrestha/" target="_blank" title="WordPress.org"><img align="center" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/wordpress/wordpress-plain.svg" alt="Salim Shrestha WordPress" height="30" width="40" /></a>
-<a href="https://salim.com.np/" target="_blank" title="Personal Website"><img align="center" src="https://cdn-icons-png.flaticon.com/512/8743/8743996.png" alt="Salim Shrestha Personal Website" height="30" width="40" /></a>
-</p>
-<br/>
+- Migrated product sync to **Action Scheduler** — zero timeouts since
+- Built **geolocation system** for country-specific affiliate links
+- Created **20+ Elementor widgets** from existing Gutenberg blocks
+- Fixed **CWE-862** security vulnerability in REST endpoints
+- **480+ commits** to production codebase
 
----
-<br/>
+</td>
+<td width="50%">
 
-### 🛠️ Languages and Tools I Use
+**Previous @ ThemeGrill**
+> Plugins with 100K+ combined installs
 
-<p align="left">
-  <a href="https://wordpress.org/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/wordpress/wordpress-plain.svg" alt="wordpress" width="40" height="40"/> </a>
-  <a href="https://www.php.net" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="php" width="40" height="40"/> </a>
-  <a href="https://www.mysql.com/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a>
-   <a href="https://reactjs.org/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="reactjs" width="40" height="40"/> </a>
-  <a href="https://jquery.com/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jquery/jquery-original-wordmark.svg" alt="jquery" width="40" height="40"/> </a>
-<a href="https://sass-lang.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" alt="sass" width="40" height="40"/> </a>
-  <a href="https://getbootstrap.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a>
-<a href="https://www.python.org" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="40" height="40"/> </a>
-   <a href="https://webpack.js.org/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/webpack/webpack-original.svg" alt="webpack" width="40" **height**="40"/> </a>
-  <a href="https://babeljs.io/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/babel/babel-original.svg" alt="babel" width="40" height="40"/> </a>
-<a href="https://gruntjs.com/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/grunt/grunt-original.svg" alt="Grunt" width="40" height="40"/> </a>
-<a href="https://www.typescriptlang.org/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="Typescript" width="40" height="40"/> </a>
-<a href="https://code.visualstudio.com/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" alt="Visual Studio Code" width="40" height="40"/> </a>
-</p>
-<br/>
+- Built **Two-Factor Authentication** add-on for User Registration
+- Contributed to BlockArt Blocks having **25+ Gutenberg blocks**
+- Created **Advanced Analytics** add-on for Everest Forms
+- Implemented REST APIs, caching, and database optimizations
+- Built frontend for in-house analytics tool
+
+</td>
+</tr>
+</table>
 
 ---
-<br />
 
-### 🤝 Let’s Work Together
+### Featured Projects
 
-I’m actively looking for:
-- 💼 Remote freelance gigs & long-term WordPress contracts  
-- 🧑‍💻 Collaborations on custom plugin projects or site builds  
-- 🧠 Opportunities to grow as a developer while delivering value  
+| Project | Description | Tech | Links |
+|---------|-------------|------|-------|
+| **AffiliateX** | Amazon affiliate blocks with API sync, geolocation | Gutenberg, React, Action Scheduler | [WordPress.org](https://wordpress.org/plugins/affiliatex) |
+| **Full Page Slider** | Fullscreen scroll sections for Gutenberg | React, @wordpress/scripts | [WordPress.org](https://wordpress.org/plugins/full-page-slider/) |
+| **BlockArt Blocks** | 25+ custom Gutenberg blocks | React, PHP | [WordPress.org](https://wordpress.org/plugins/blockart-blocks/) |
+| **User Registration 2FA** | Two-Factor Authentication add-on | PHP, OTP, Email verification | [ThemeGrill](https://wpuserregistration.com/features/two-factor-authentication/) |
 
-> 💬 If you're looking for a reliable, fast-learning developer who brings structure, commitment, and integrity to the table — let’s talk.
->
-<br />
-<br />
+---
 
-### ✨ Thanks for checking out my GitHub!  
-Stay curious. Build boldly. Keep improving.
+### GitHub Stats
+
+<div align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=salimshrestha98&show_icons=true&theme=default&hide_border=true&bg_color=ffffff&title_color=1e40af&icon_color=1e40af&text_color=334155" alt="GitHub Stats" height="165">
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=salimshrestha98&layout=compact&hide_border=true&bg_color=ffffff&title_color=1e40af&text_color=334155" alt="Top Languages" height="165">
+
+</div>
+
+<div align="center">
+
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=salimshrestha98&theme=default&hide_border=true&background=ffffff&ring=1e40af&fire=1e40af&currStreakLabel=1e40af)
+
+</div>
+
+---
+
+### Speaking & Community
+
+- **WordCamp Bharatpur 2025** - Speaker
+- **WordCamp Kathmandu 2023** - Contributor Day Participant
+- **WordPress.org** - Plugin Developer, Translation Contributor (Nepali)
+- **Teach For Nepal Fellow** - Taught CS to school students in underserved communities
+
+---
+
+<div align="center">
+
+### Let's Connect
+
+I'm actively looking for **senior remote WordPress developer roles** at product-focused companies.
+
+[![Email](https://img.shields.io/badge/mail@salim.com.np-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mail@salim.com.np)
+[![Hire Me](https://img.shields.io/badge/Hire_Me-1e40af?style=for-the-badge&logo=readthedocs&logoColor=white)](https://salim.com.np/hire)
+[![Case Studies](https://img.shields.io/badge/Case_Studies-334155?style=for-the-badge&logo=bookstack&logoColor=white)](https://salim.com.np/case-studies)
+
+</div>
+
+---
+
+<div align="center">
+
+![Profile Views](https://komarev.com/ghpvc/?username=salimshrestha98&color=1e40af&style=flat-square&label=Profile+Views)
+
+</div>
