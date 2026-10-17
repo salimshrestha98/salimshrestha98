@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>ShuffleTube</title>
+<style>
+  :root {
+    --bg: #f5f5f7;
+    --bg-glow-1: rgba(0, 113, 227, .10);
+    --bg-glow-2: rgba(175, 82, 222, .08);
+    --text: #1d1d1f;
+    --text-2: #6e6e73;
+    --glass: rgba(255, 255, 255, .72);
+    --glass-border: rgba(0, 0, 0, .08);
+    --hover: rgba(0, 0, 0, .06);
+    --accent: #0071e3;
+    --accent-hover: #0077ed;
+    --shadow: 0 30px 80px -20px rgba(0, 0, 0, .35), 0 8px 24px -8px rgba(0, 0, 0, .18);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
+    --pad: 12px;
+    --gap: 14px;
+    --bar-h: 66px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #000;
+      --bg-glow-1: rgba(10, 132, 255, .16);
+      --bg-glow-2: rgba(191, 90, 242, .12);
+      --text: #f5f5f7;
+      --text-2: #a1a1a6;
+      --glass: rgba(40, 40, 44, .68);
+      --glass-border: rgba(255, 255, 255, .10);
+      --hover: rgba(255, 255, 255, .10);
+      --accent: #0a84ff;
+      --accent-hover: #409cff;
+      --shadow: 0 30px 80px -20px rgba(0, 0, 0, .9), 0 8px 24px -8px rgba(0, 0, 0, .6);
+    }
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html, body { width: 100%; max-width: 100%; height: 100%; }
+  body {
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    font-family: var(--font);
+    color: var(--text);
+    background:
+      radial-gradient(60% 50% at 15% 0%, var(--bg-glow-1), transparent 70%),
+      radial-gradient(50% 50% at 90% 100%, var(--bg-glow-2), transparent 70%),
+      var(--bg);
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+
+  /* ---------- Stage: video on top, controls below ---------- */
+  main {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap);
+    padding: var(--pad);
+  }
+  .frame {
+    position: relative;
+    flex: none;
+    width: min(100%, calc((100dvh - var(--bar-h) - var(--gap) - var(--pad) * 2 - env(safe-area-inset-top) - env(safe-area-inset-bottom)) * 16 / 9));
+    aspect-ratio: 16 / 9;
+    border-radius: clamp(12px, 1.6vw, 20px);
+    overflow: hidden;
+    background: #000;
+    box-shadow: var(--shadow);
+    isolation: isolate;
+    transform: translateZ(0);
+  }
+  .frame:fullscreen { border-radius: 0; width: 100%; }
+  #player, .frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+  /* Welcome overlay */
+  .welcome {
+    position: absolute; inset: 0; z-index: 2;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 18px; text-align: center; padding: 24px;
+    color: #f5f5f7;
+    background:
+      radial-gradient(70% 90% at 20% 10%, rgba(10, 132, 255, .45), transparent 60%),
+      radial-gradient(70% 90% at 85% 95%, rgba(191, 90, 242, .40), transparent 60%),
+      #0b0b0d;
+    transition: opacity .5s ease, visibility .5s;
+  }
+  body.started .welcome { opacity: 0; visibility: hidden; pointer-events: none; }
+  .welcome h1 { font-size: clamp(28px, 5vw, 56px); font-weight: 700; letter-spacing: -.035em; line-height: 1.05; }
+  .welcome p { font-size: clamp(14px, 1.6vw, 19px); color: rgba(245, 245, 247, .72); letter-spacing: -.01em; max-width: 36em; }
+  .cta {
+    margin-top: 6px;
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 13px 26px; border: 0; border-radius: 999px; cursor: pointer;
+    font: 600 16px/1 var(--font); letter-spacing: -.01em; color: #fff;
+    background: var(--accent);
+    transition: transform .2s ease, background .2s ease, opacity .2s ease;
+  }
+  .cta:hover { background: var(--accent-hover); transform: scale(1.03); }
+  .cta:active { transform: scale(.97); }
+  .cta:disabled { opacity: .5; cursor: default; transform: none; }
+  .cta svg { width: 18px; height: 18px; }
+
+  /* ---------- Controls (centered) ---------- */
+  .controls {
+    flex: none;
+    height: var(--bar-h);
+    margin: 0 auto;
+    display: flex; align-items: center; justify-content: center; gap: 4px;
+    padding: 6px;
+    border-radius: 999px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    -webkit-backdrop-filter: saturate(180%) blur(24px);
+    backdrop-filter: saturate(180%) blur(24px);
+  }
+  .btn {
+    width: 44px; height: 44px; border: 0; border-radius: 50%; cursor: pointer;
+    display: grid; place-items: center;
+    background: transparent; color: var(--text);
+    transition: background .2s ease, transform .15s ease, opacity .2s ease;
+  }
+  .btn:hover { background: var(--hover); }
+  .btn:active { transform: scale(.92); }
+  .btn:disabled { opacity: .3; cursor: default; pointer-events: none; }
+  .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .btn svg { width: 22px; height: 22px; }
+  .btn.primary { width: 52px; height: 52px; background: var(--text); color: var(--bg); }
+  .btn.primary:hover { background: var(--text); opacity: .85; }
+  .btn.primary svg { width: 24px; height: 24px; }
+  .btn.toggle[aria-pressed="true"] { color: var(--accent); }
+  .sep { width: 1px; height: 22px; background: var(--glass-border); margin: 0 4px; }
+  .hide { display: none !important; }
+
+  /* Toast */
+  .toast {
+    position: fixed; left: 50%; top: calc(20px + env(safe-area-inset-top));
+    transform: translate(-50%, -20px); opacity: 0; pointer-events: none;
+    max-width: calc(100% - 32px);
+    padding: 12px 20px; border-radius: 999px; font-size: 14px; letter-spacing: -.01em; text-align: center;
+    background: var(--glass); border: 1px solid var(--glass-border); color: var(--text);
+    -webkit-backdrop-filter: saturate(180%) blur(24px); backdrop-filter: saturate(180%) blur(24px);
+    transition: opacity .3s ease, transform .3s ease; z-index: 10;
+  }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  @media (max-width: 640px) {
+    :root { --pad: 8px; }
+    .frame { width: 100%; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<main>
+  <div class="frame" id="frame">
+    <div id="player"></div>
+    <div class="welcome">
+      <h1>Something new,<br>every time.</h1>
+      <p id="welcomeSub">Loading your collection…</p>
+      <button class="cta" id="start" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
+        Shuffle
+      </button>
+    </div>
+  </div>
+
+  <div class="controls" role="toolbar" aria-label="Playback controls">
+    <button class="btn" id="prev" aria-label="Previous video" title="Previous (←)" disabled>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5.5a1 1 0 0 1 2 0v5.2l9.1-5.3A1 1 0 0 1 18.6 6.3v11.4a1 1 0 0 1-1.5.9L8 13.3v5.2a1 1 0 0 1-2 0V5.5z"/></svg>
+    </button>
+    <button class="btn primary" id="play" aria-label="Play" title="Play / Pause (Space)">
+      <svg id="icPlay" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.4v13.2a1 1 0 0 0 1.5.86l10.8-6.6a1 1 0 0 0 0-1.72L9.5 4.54A1 1 0 0 0 8 5.4z"/></svg>
+      <svg id="icPause" class="hide" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4.5" width="4.2" height="15" rx="1.4"/><rect x="13.8" y="4.5" width="4.2" height="15" rx="1.4"/></svg>
+    </button>
+    <button class="btn" id="next" aria-label="Next random video" title="Next random (→)">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 5.5a1 1 0 0 0-2 0v5.2L6.9 5.4A1 1 0 0 0 5.4 6.3v11.4a1 1 0 0 0 1.5.9L16 13.3v5.2a1 1 0 0 0 2 0V5.5z"/></svg>
+    </button>
+    <div class="sep"></div>
+    <button class="btn toggle" id="auto" aria-pressed="true" aria-label="Auto-play next" title="Auto-play next">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a3 3 0 0 1 3-3h15"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a3 3 0 0 1-3 3H3"/></svg>
+    </button>
+    <button class="btn" id="fs" aria-label="Fullscreen" title="Fullscreen (F)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+    </button>
+  </div>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ==========================================================
+   VIDEO LIST — edit videos.json (same folder as this file).
+   It's a JSON array of YouTube links or bare video IDs:
+     [
+       "dQw4w9WgXcQ",
+       "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+       "https://youtu.be/dQw4w9WgXcQ"
+     ]
+   ========================================================== */
+(async () => {
+  const $ = id => document.getElementById(id);
+  const els = {
+    frame: $('frame'), start: $('start'), play: $('play'), prev: $('prev'), next: $('next'),
+    auto: $('auto'), fs: $('fs'), icPlay: $('icPlay'), icPause: $('icPause'),
+    toast: $('toast'), welcomeSub: $('welcomeSub'),
+  };
+
+  /* ---- Parse links / IDs ---- */
+  const parseId = v => {
+    if (v && typeof v === 'object') v = v.url || v.id;
+    if (typeof v !== 'string') return null;
+    v = v.trim();
+    if (/^[\w-]{11}$/.test(v)) return v;
+    const m = v.match(/(?:v=|youtu\.be\/|embed\/|shorts\/|live\/|v\/)([\w-]{11})/);
+    return m ? m[1] : null;
+  };
+
+  /* ---- Load the video list from videos.json ---- */
+  let VIDEOS = [], loadError = null;
+  try {
+    const res = await fetch('videos.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    VIDEOS = Array.isArray(data) ? data : (data.videos || []);
+  } catch (err) {
+    loadError = err;
+    console.error('[ShuffleTube] Could not load videos.json:', err);
+  }
+  const IDS = [...new Set(VIDEOS.map(parseId).filter(Boolean))]; // duplicates removed
+
+  if (IDS.length) {
+    els.welcomeSub.textContent = `${IDS.length} video${IDS.length === 1 ? '' : 's'} ready. A random one, every time.`;
+    els.start.disabled = false;
+  } else {
+    els.welcomeSub.textContent = loadError
+      ? 'Couldn’t load videos.json. Serve this folder over http://localhost (browsers block file:// requests).'
+      : 'videos.json has no valid YouTube links yet.';
+  }
+
+  /* ---- Shuffle engine: every video plays once per cycle (no repeats) ---- */
+  const shuffle = arr => {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  };
+  let bag = [];
+  const failed = new Set();
+  const history = [];
+  let pos = -1;
+
+  const draw = () => {
+    if (!bag.length) {
+      bag = shuffle(IDS.filter(i => !failed.has(i)));
+      // avoid the same video twice in a row across cycles
+      if (bag.length > 1 && bag[bag.length - 1] === history[history.length - 1]) {
+        [bag[0], bag[bag.length - 1]] = [bag[bag.length - 1], bag[0]];
+      }
+    }
+    return bag.pop();
+  };
+
+  /* ---- State ---- */
+  let player, ready = false, started = false, autoNext = true, toastTimer;
+
+  const toast = (msg, ms = 2600) => {
+    els.toast.textContent = msg;
+    els.toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => els.toast.classList.remove('show'), ms);
+  };
+
+  const setPlaying = playing => {
+    els.icPlay.classList.toggle('hide', playing);
+    els.icPause.classList.toggle('hide', !playing);
+    els.play.setAttribute('aria-label', playing ? 'Pause' : 'Play');
+  };
+  const updateNav = () => { els.prev.disabled = pos <= 0; };
+
+  const load = id => {
+    if (!ready) return;
+    if (!started) { started = true; document.body.classList.add('started'); }
+    player.loadVideoById(id);
+    updateNav();
+  };
+
+  const goNext = () => {
+    if (!IDS.length || !ready) return;
+    if (pos < history.length - 1) { pos++; }
+    else {
+      const id = draw();
+      if (!id) return;
+      history.push(id); pos = history.length - 1;
+    }
+    load(history[pos]);
+  };
+  const goPrev = () => {
+    if (pos > 0) { pos--; load(history[pos]); }
+  };
+  const togglePlay = () => {
+    if (!started) return goNext();
+    const s = player.getPlayerState();
+    s === YT.PlayerState.PLAYING || s === YT.PlayerState.BUFFERING ? player.pauseVideo() : player.playVideo();
+  };
+  const toggleFs = () => {
+    if (document.fullscreenElement) document.exitFullscreen();
+    else if (els.frame.requestFullscreen) els.frame.requestFullscreen();
+    else if (els.frame.webkitRequestFullscreen) els.frame.webkitRequestFullscreen();
+  };
+
+  /* ---- YouTube IFrame API ---- */
+  window.onYouTubeIframeAPIReady = () => {
+    const vars = { autoplay: 1, rel: 0, playsinline: 1, modestbranding: 1, iv_load_policy: 3 };
+    if (location.protocol.startsWith('http')) vars.origin = location.origin;
+    player = new YT.Player('player', {
+      width: '100%', height: '100%', playerVars: vars,
+      events: {
+        onReady: () => { ready = true; },
+        onStateChange: e => {
+          const S = YT.PlayerState;
+          if (e.data === S.PLAYING) {
+            setPlaying(true);
+            const d = player.getVideoData() || {};
+            document.title = d.title ? `${d.title} · ShuffleTube` : 'ShuffleTube';
+          } else if (e.data === S.PAUSED) {
+            setPlaying(false);
+          } else if (e.data === S.ENDED) {
+            setPlaying(false);
+            if (autoNext) goNext();
+          }
+        },
+        onError: e => {
+          const code = e.data;
+          const id = history[pos];
+          console.warn('[ShuffleTube] YouTube error', code, 'for video', id);
+
+          // 153 = YouTube refused the embed because the page has no valid origin
+          // (this is what happens when opened as file://). Skipping won't help.
+          if (code === 153) {
+            toast('YouTube blocked playback (error 153). Open this page via http://localhost instead of file://', 15000);
+            return;
+          }
+
+          const reasons = {
+            2: 'invalid video ID',
+            5: 'player error',
+            100: 'video removed or private',
+            101: 'embedding disabled by the owner',
+            150: 'embedding disabled by the owner',
+            152: 'embedding disabled by the owner',
+          };
+          failed.add(id);
+          bag = bag.filter(i => !failed.has(i));
+          console.warn('[ShuffleTube] Skipping', id, '-', reasons[code] || 'unknown reason');
+
+          if (failed.size >= IDS.length) {
+            toast('None of the videos can be played (' + (reasons[code] || 'error ' + code) + ').', 8000);
+            return;
+          }
+          toast('Skipped a video: ' + (reasons[code] || 'error ' + code), 3000);
+          setTimeout(goNext, 800);
+        },
+      },
+    });
+  };
+  const tag = document.createElement('script');
+  tag.src = 'https://www.youtube.com/iframe_api';
+  document.head.appendChild(tag);
+
+  /* ---- Events ---- */
+  els.start.addEventListener('click', goNext);
+  els.next.addEventListener('click', goNext);
+  els.prev.addEventListener('click', goPrev);
+  els.play.addEventListener('click', togglePlay);
+  els.fs.addEventListener('click', toggleFs);
+  els.auto.addEventListener('click', () => {
+    autoNext = !autoNext;
+    els.auto.setAttribute('aria-pressed', autoNext);
+    toast(autoNext ? 'Auto-play next: On' : 'Auto-play next: Off');
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    switch (e.key) {
+      case ' ': case 'k': e.preventDefault(); togglePlay(); break;
+      case 'ArrowRight': case 'n': case 'N': goNext(); break;
+      case 'ArrowLeft': case 'p': case 'P': goPrev(); break;
+      case 'f': case 'F': toggleFs(); break;
+    }
+  });
+})();
+</script>
+</body>
+</html>
